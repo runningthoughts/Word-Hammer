@@ -1,0 +1,91 @@
+<!-- quiz_app.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Word Hammer</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="scripts.js" defer></script>
+</head>
+<body>
+    <div class="header-container">
+        <div class="logo-container">
+            <img src="word-hammer.png" alt="Word Hammer" class="logo">
+        </div>
+        <div id="stats-dashboard" class="stats-panel">
+            <div class="meter-container">
+                <div id="total-correct-meter-wrapper" class="meter-wrapper">
+                    <!-- <object id="total-correct-meter" class="quiz-meter" data="quiz-meter.svg" type="image/svg+xml"></object> -->
+                    <svg id="meter-total" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 289.93 160.82">
+                        <g>
+                            <path class="cls-10" d="M271.74,74.66l-34.64,20c3.57,6.52,6.47,13.46,8.61,20.73l38.65-10.36c-3.06-10.68-7.33-20.85-12.63-30.37Z"/>
+                            <path class="cls-8" d="M44.21,115.38c2.14-7.26,5.04-14.2,8.61-20.73l-34.64-20c-5.3,9.52-9.56,19.69-12.63,30.37l38.65,10.36Z"/>
+                            <path class="cls-5" d="M109.85,4.28l10.36,38.65c7.16-1.74,14.61-2.74,22.25-2.92V0c-11.22.19-22.14,1.66-32.61,4.28Z"/>
+                            <path class="cls-1" d="M74.65,18.19l20,34.64c6.52-3.57,13.46-6.47,20.73-8.61l-10.36-38.65c-10.68,3.06-20.85,7.33-30.37,12.63Z"/>
+                            <path class="cls-6" d="M55.33,90.33c3.92-6.41,8.51-12.37,13.67-17.79l-28.27-28.27c-7.62,7.88-14.35,16.62-20.04,26.06l34.64,20Z"/>
+                            <path class="cls-2" d="M72.54,69.01c5.41-5.16,11.37-9.75,17.79-13.67l-20-34.64c-9.44,5.69-18.18,12.43-26.06,20.04l28.27,28.27Z"/>
+                            <path class="cls-3" d="M174.55,44.22c7.26,2.14,14.2,5.04,20.73,8.61l20-34.64c-9.52-5.3-19.69-9.56-30.37-12.63l-10.36,38.65Z"/>
+                            <path class="cls-13" d="M247.01,120.21c1.74,7.16,2.74,14.61,2.92,22.25h40c-.19-11.22-1.66-22.14-4.28-32.61l-38.65,10.36Z"/>
+                            <path class="cls-11" d="M220.92,72.55c5.16,5.41,9.75,11.37,13.67,17.79l34.64-20c-5.69-9.44-12.43-18.18-20.04-26.06l-28.27,28.27Z"/>
+                            <path class="cls-9" d="M199.6,55.34c6.41,3.92,12.37,8.51,17.79,13.67l28.27-28.27c-7.88-7.62-16.62-14.35-26.06-20.04l-20,34.64Z"/>
+                            <path class="cls-12" d="M147.46,40c7.65.18,15.09,1.19,22.25,2.92l10.36-38.65c-10.47-2.61-21.39-4.08-32.61-4.28v40Z"/>
+                            <path class="cls-7" d="M40,142.47c.18-7.65,1.18-15.09,2.92-22.25l-38.65-10.36C1.66,120.33.19,131.25,0,142.47h40Z"/>
+                            <circle class="pointer" cx="144.96" cy="144.82" r="16" transform="translate(-31.57 40.78) rotate(-14.46)"/>
+                            <polygon id="quiz-meter-pointer-total" class="pointer" points="142.09 129.08 44.76 144.82 142.09 160.56 144.96 144.82 142.09 129.08"/>
+                        </g>
+                    </svg>
+                    <div id="total-correct-meter-label" class="meter-label">Total Correct: </div>
+                </div>
+                <div id="trailing-correct-meter-wrapper" class="meter-wrapper">
+                    <!-- <object id="trailing-correct-meter" class="quiz-meter" data="quiz-meter.svg" type="image/svg+xml"></object> -->
+                    <svg id="meter-trailing" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 289.93 160.82">
+                        <g>
+                            <path class="cls-10" d="M271.74,74.66l-34.64,20c3.57,6.52,6.47,13.46,8.61,20.73l38.65-10.36c-3.06-10.68-7.33-20.85-12.63-30.37Z"/>
+                            <path class="cls-8" d="M44.21,115.38c2.14-7.26,5.04-14.2,8.61-20.73l-34.64-20c-5.3,9.52-9.56,19.69-12.63,30.37l38.65,10.36Z"/>
+                            <path class="cls-5" d="M109.85,4.28l10.36,38.65c7.16-1.74,14.61-2.74,22.25-2.92V0c-11.22.19-22.14,1.66-32.61,4.28Z"/>
+                            <path class="cls-1" d="M74.65,18.19l20,34.64c6.52-3.57,13.46-6.47,20.73-8.61l-10.36-38.65c-10.68,3.06-20.85,7.33-30.37,12.63Z"/>
+                            <path class="cls-6" d="M55.33,90.33c3.92-6.41,8.51-12.37,13.67-17.79l-28.27-28.27c-7.62,7.88-14.35,16.62-20.04,26.06l34.64,20Z"/>
+                            <path class="cls-2" d="M72.54,69.01c5.41-5.16,11.37-9.75,17.79-13.67l-20-34.64c-9.44,5.69-18.18,12.43-26.06,20.04l28.27,28.27Z"/>
+                            <path class="cls-3" d="M174.55,44.22c7.26,2.14,14.2,5.04,20.73,8.61l20-34.64c-9.52-5.3-19.69-9.56-30.37-12.63l-10.36,38.65Z"/>
+                            <path class="cls-13" d="M247.01,120.21c1.74,7.16,2.74,14.61,2.92,22.25h40c-.19-11.22-1.66-22.14-4.28-32.61l-38.65,10.36Z"/>
+                            <path class="cls-11" d="M220.92,72.55c5.16,5.41,9.75,11.37,13.67,17.79l34.64-20c-5.69-9.44-12.43-18.18-20.04-26.06l-28.27,28.27Z"/>
+                            <path class="cls-9" d="M199.6,55.34c6.41,3.92,12.37,8.51,17.79,13.67l28.27-28.27c-7.88-7.62-16.62-14.35-26.06-20.04l-20,34.64Z"/>
+                            <path class="cls-12" d="M147.46,40c7.65.18,15.09,1.19,22.25,2.92l10.36-38.65c-10.47-2.61-21.39-4.08-32.61-4.28v40Z"/>
+                            <path class="cls-7" d="M40,142.47c.18-7.65,1.18-15.09,2.92-22.25l-38.65-10.36C1.66,120.33.19,131.25,0,142.47h40Z"/>
+                            <circle class="pointer" cx="144.96" cy="144.82" r="16" transform="translate(-31.57 40.78) rotate(-14.46)"/>
+                            <polygon id="quiz-meter-pointer-trailing" class="pointer" points="142.09 129.08 44.76 144.82 142.09 160.56 144.96 144.82 142.09 129.08"/>
+                        </g>
+                    </svg>
+                    <div id="trailing-correct-meter-label" class="meter-label">Last 20 Questions: </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="setup" class="setup">
+        <div id="instructions-container">
+          Type in any language you'd like to practice. Then describe a very specific area you are having problems with.  Examples: "por" vs "para", "hablar" vs "hablar de", "ser" vs "estar", etc. will instruct Word Hammer to generate an endless quiz on that topic, 10 questions at a time. After 10 questions, you can choose to continue or start a new quiz.  If you want to really perfect your skills in this problem area, we suggest that you continue taking the quiz until you have a perfect score for the last 20 questions.  There are two meters to track your progress. The first is the total correct meter, which tracks your overall performance. The second is the trailing 20 correct meter, which tracks your performance over the last 20 questions.
+        </div>
+        <label for="language" class="language-label">Which Language:</label>
+        <input type="text" id="language" name="language" placeholder="e.g., Spanish" required class="language-input"><br><br>
+
+        <label for="problem_area" class="problem-label">Describe the problem area:</label>
+        <textarea id="problem_area" name="problem_area" placeholder="e.g., 'por' vs 'para'" required class="problem-input" autocomplete="off"></textarea><br><br>
+
+        <button id="startQuiz" class="start-button">Start Quiz</button>
+    </div>
+
+    <div id="quiz" class="hidden">
+        <div id="advice-container">
+            Fill in the blanks below with the correct form of the word. Verbs may need to be conjugated. The answer might deviate from the specific subject area you specified due to the imprecise nature of LLMs, and unforuntately, might occasionally be incorrect (i.e., it hallucinated). Please bear with this and simply be advised.  At any time, you can press the Escape key to quit andreturn to the setup screen.  You will need to include any special characters, such as accents and any valid letters in your target language. Answers may be in any tense, if you are quizzing on verbs.
+        </div>
+        <div class="quiz-content">
+            <div id="question-container"></div>
+            <button id="nextQuestion" class="hidden next-button">Continue (or just press Enter)</button>
+            <button id="resetQuiz" class="hidden reset-button">Reset Quiz (or just press Escape)</button>
+        </div>
+    </div>
+
+</body>
+</html>
