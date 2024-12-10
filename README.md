@@ -9,3 +9,5 @@ This is pretty much the solution for now.  It does track your progress, and afte
 ## Known Issues
 - If you use <Return> to submit your answer, you must keep using the <Return> key. If you use the Continue button, you must keep using the Continue button.  If you change modes, you will either see the app stop checking your answers, or double-skipping questions, depending on which mode you used first.  This is planned to be fixed in the future.
 - For now, for the same prompt, SambaNova will return the same questions.
+
+### If you decide to use the code yourself, you will need to add your own API key to the PHP code.  You can get one from SambaNova.
